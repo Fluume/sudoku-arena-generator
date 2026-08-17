@@ -1,0 +1,23 @@
+[package]
+name = "sudoku-cli"
+description = "Command-line interface for bulk Sudoku puzzle generation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "sudoku-gen"
+path = "src/main.rs"
+
+[dependencies]
+sudoku-core = { path = "../sudoku-core", features = ["serde"] }
+sudoku-generator = { path = "../sudoku-generator" }
+sudoku-solver = { path = "../sudoku-solver" }
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+rand = "0.8"
+rand_core = "0.6"
+indicatif = "0.17"

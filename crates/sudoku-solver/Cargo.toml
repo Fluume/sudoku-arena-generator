@@ -1,0 +1,13 @@
+[package]
+name = "sudoku-solver"
+description = "Exact (uniqueness) and technique-based Sudoku solvers"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+sudoku-core = { path = "../sudoku-core" }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "1"

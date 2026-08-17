@@ -1,0 +1,105 @@
+# Default technique hierarchy: which solving techniques exist, which
+# difficulty category they belong to, and their relative weight. Weights are
+# spaced out so new techniques can be inserted later without renumbering
+# everything. Override by loading a different TOML file via
+# `TechniqueHierarchy::from_file`.
+#
+# The ordering/weights below follow the empirically-tuned progression of
+# the Java reference solver these techniques were ported from (see
+# ROADMAP.md), mapped onto these category names.
+
+[[technique]]
+id = "hidden_single_block"
+name = "Hidden Single (block)"
+category = "Very Easy"
+weight = 100
+
+[[technique]]
+id = "hidden_single_line"
+name = "Hidden Single (row/col)"
+category = "Easy"
+weight = 200
+
+[[technique]]
+id = "naked_single"
+name = "Naked Single"
+category = "Easy"
+weight = 300
+
+[[technique]]
+id = "pointing_claiming"
+name = "Pointing and Claiming"
+category = "Moderately Easy"
+weight = 400
+
+[[technique]]
+id = "naked_pair"
+name = "Naked Pair"
+category = "Moderate"
+weight = 500
+
+[[technique]]
+id = "x_wing"
+name = "X-Wing"
+category = "Moderate"
+weight = 510
+
+[[technique]]
+id = "hidden_pair"
+name = "Hidden Pair"
+category = "Moderate"
+weight = 520
+
+[[technique]]
+id = "naked_triple"
+name = "Naked Triple"
+category = "Moderately Hard"
+weight = 600
+
+[[technique]]
+id = "swordfish"
+name = "Swordfish"
+category = "Moderately Hard"
+weight = 610
+
+[[technique]]
+id = "hidden_triple"
+name = "Hidden Triple"
+category = "Hard"
+weight = 700
+
+[[technique]]
+id = "skyscraper"
+name = "Skyscraper"
+category = "Hard"
+weight = 710
+
+[[technique]]
+id = "two_string_kite"
+name = "2-String Kite"
+category = "Hard"
+weight = 720
+
+[[technique]]
+id = "xy_wing"
+name = "XY-Wing"
+category = "Hard"
+weight = 730
+
+[[technique]]
+id = "xyz_wing"
+name = "XYZ-Wing"
+category = "Hard"
+weight = 740
+
+[[technique]]
+id = "naked_quad"
+name = "Naked Quad"
+category = "Vicious"
+weight = 800
+
+[[technique]]
+id = "hidden_quad"
+name = "Hidden Quad"
+category = "Vicious"
+weight = 810
