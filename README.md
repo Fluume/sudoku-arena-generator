@@ -77,6 +77,7 @@ Generates a batch of puzzles and prints them (or writes them to a file). The bat
 | `--min-clues <N>` | `0` | Never remove a clue that would drop the puzzle below this many clues. A floor, not an exact target — digging may stop above it if it runs out of safely-removable cells first. |
 | `--min-difficulty <N>` / `--max-difficulty <N>` | unset | Keep only puzzles whose difficulty (the weight of the hardest technique required — see `sudoku-gen rate`) falls in this range. Conflicts with `--train-technique`. |
 | `--train-technique <id>` | unset | Training mode: generate puzzles that maximize this technique's occurrence count, while never requiring anything harder than its own weight. Conflicts with `--min-difficulty`/`--max-difficulty`. |
+| `--min-technique-count <N>` | `1` | In training mode, only accept puzzles where `--train-technique`'s technique fires at least this many times. Ignored without `--train-technique`. |
 | `--attempts <N>` | `200` | Max retries per puzzle when `--min-difficulty`, `--max-difficulty`, or `--train-technique` is set. If no candidate satisfies the constraint within this budget, that puzzle is skipped with a warning on stderr — the batch continues, so the final count may be less than `--count`. Ignored otherwise (plain generation is always a single fast attempt). |
 | `--technique-config <path>` | bundled default | Same as `rate`'s flag — which hierarchy to grade against, when grading is active. |
 | `--format <text\|json>` | `text` | Output format (see below). |
@@ -143,6 +144,12 @@ cargo run -p sudoku-cli -- generate --count 1 --train-technique two_string_kite 
 ]
 ```
 
+**Minimum occurrence count for the trained technique** — reject any puzzle where `two_string_kite` fires fewer than 8 times:
+
+```sh
+cargo run -p sudoku-cli -- generate --count 1 --train-technique two_string_kite --min-technique-count 8 --attempts 500
+```
+
 **Difficulty-targeted generation:**
 
 ```sh
@@ -192,7 +199,7 @@ steps:
 ```
 crates/
 ├── sudoku-core/       board representation, bitmask bookkeeping, symmetry transforms
-├── sudoku-solver/     exact (uniqueness) solver + technique-based solver (16 techniques) + hierarchy config
+├── sudoku-solver/     exact (uniqueness) solver + technique-based solver (17 techniques) + hierarchy config
 ├── sudoku-generator/  full-grid generation + pluggable puzzle construction strategies
 └── sudoku-cli/        the `sudoku-gen` command-line tool
 ```

@@ -13,6 +13,7 @@ mod hidden_quad;
 mod hidden_single;
 mod hidden_triple;
 mod jellyfish;
+mod last_digit;
 mod locked_candidates;
 mod naked_pair;
 mod naked_quad;
@@ -30,6 +31,7 @@ mod xyz_wing;
 /// these against the configured hierarchy by id.
 pub fn all_known_techniques() -> Vec<Box<dyn Technique>> {
     vec![
+        Box::new(last_digit::LastDigit),
         Box::new(hidden_single::HiddenSingleBlock),
         Box::new(hidden_single::HiddenSingleLine),
         Box::new(naked_single::NakedSingle),

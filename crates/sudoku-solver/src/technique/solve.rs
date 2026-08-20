@@ -200,11 +200,15 @@ mod tests {
             "expected the well-known example to be fully solved"
         );
 
-        // Every technique that fired should be a single (block/line/naked),
-        // never anything harder, for this famously easy example.
+        // Every technique that fired should be a single (last digit/
+        // block/line/naked), never anything harder, for this famously easy
+        // example.
         for (id, _) in &trace.technique_counts {
             assert!(
-                id == "hidden_single_block" || id == "hidden_single_line" || id == "naked_single",
+                id == "last_digit"
+                    || id == "hidden_single_block"
+                    || id == "hidden_single_line"
+                    || id == "naked_single",
                 "unexpected technique fired: {id}"
             );
         }

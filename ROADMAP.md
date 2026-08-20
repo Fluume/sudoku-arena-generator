@@ -18,7 +18,8 @@ The first vertical slice: a genuinely runnable pipeline from "nothing" to "verif
 - Swordfish/Jellyfish/Skyscraper/2-String Kite loop candidate values `0..8` in Java instead of `1..=9` (never checks digit 9) — fixed.
 - Hidden Pair/Triple/Quad's shared union-of-positions check doesn't guard against a value with zero remaining candidates (e.g. already placed elsewhere in the unit) pairing up with a genuinely-confined value and producing a bogus, over-eliminating "hidden pair" — guarded against here.
 - "Locked Candidates" in Java only implements Pointing (box→line); Claiming (line→box) didn't exist and was written fresh as the mirror algorithm. Both share one hierarchy entry (`pointing_claiming`), per the agreed hierarchy.
-- [x] 16 techniques implemented and unit-tested: Hidden Single (block/row/col), Naked Single, Pointing, Claiming, Naked Pair/Triple/Quad, Hidden Pair/Triple/Quad, X-Wing, Swordfish, Jellyfish, Skyscraper, 2-String Kite, XY-Wing, XYZ-Wing.
+- [x] 17 techniques implemented and unit-tested: Last Digit, Hidden Single (block/row/col), Naked Single, Pointing, Claiming, Naked Pair/Triple/Quad, Hidden Pair/Triple/Quad, X-Wing, Swordfish, Jellyfish, Skyscraper, 2-String Kite, XY-Wing, XYZ-Wing.
+  - Last Digit isn't from the Java reference — added on top of it as the weakest technique in the hierarchy (below Hidden Single), for absolute-beginner puzzles: a row/column/block with exactly one empty cell, solved by counting alone (no candidates needed).
 - [x] `sudoku-gen rate <puzzle>` CLI command: solves a puzzle, reports difficulty and technique usage.
 
 **Training mode, clue-pattern symmetry, and difficulty-targeted generation** — all built on the technique solver and exposed as `sudoku-gen generate` flags:

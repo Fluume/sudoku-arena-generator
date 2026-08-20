@@ -9,6 +9,12 @@
 # ROADMAP.md), mapped onto these category names.
 
 [[technique]]
+id = "last_digit"
+name = "Last Digit"
+category = "Trivial"
+weight = 50
+
+[[technique]]
 id = "hidden_single_block"
 name = "Hidden Single (block)"
 category = "Very Easy"
@@ -39,34 +45,28 @@ category = "Moderate"
 weight = 500
 
 [[technique]]
-id = "x_wing"
-name = "X-Wing"
-category = "Moderate"
-weight = 510
-
-[[technique]]
 id = "hidden_pair"
 name = "Hidden Pair"
 category = "Moderate"
-weight = 520
+weight = 510
 
 [[technique]]
 id = "naked_triple"
 name = "Naked Triple"
 category = "Moderately Hard"
-weight = 600
-
-[[technique]]
-id = "swordfish"
-name = "Swordfish"
-category = "Moderately Hard"
-weight = 610
+weight = 520
 
 [[technique]]
 id = "hidden_triple"
 name = "Hidden Triple"
 category = "Hard"
-weight = 700
+weight = 530
+
+[[technique]]
+id = "x_wing"
+name = "X-Wing"
+category = "Moderate"
+weight = 600
 
 [[technique]]
 id = "skyscraper"
@@ -79,6 +79,12 @@ id = "two_string_kite"
 name = "2-String Kite"
 category = "Hard"
 weight = 720
+
+[[technique]]
+id = "swordfish"
+name = "Swordfish"
+category = "Moderately Hard"
+weight = 725
 
 [[technique]]
 id = "xy_wing"
