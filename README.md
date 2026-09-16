@@ -1,6 +1,6 @@
 # sudoku-arena-generator
 
-A fast, standalone Sudoku puzzle generator, written in Rust. Built for [Sudoku Arena](https://github.com/Fluume/sudoku-arena-generator), and open-sourced for the wider Sudoku community.
+A fast, standalone Sudoku puzzle generator, written in Rust. Built for [Sudoku Arena](https://sudokuarena.online), and open-sourced for the wider Sudoku community.
 
 See [`ABOUT.md`](./ABOUT.md) for why this project exists and why it's built the way it is, and [`ROADMAP.md`](./ROADMAP.md) for what's built so far versus what's planned.
 
